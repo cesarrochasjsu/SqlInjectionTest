@@ -30,20 +30,6 @@ safeTransaction conn userName = do
     execute stmt [toSql userName]
     fetchAllRows stmt
 
--- main :: IO ()
--- main = hspec $ do
---   describe "Safe Transaction Unit Tests" $ do
---     it "Returns Nothing for Invalid Inputs" $ do
---         connection <- connectSqlite3 "test.db" -- connect to sqlite db
---         result <- null <$> safeTransaction connection maliciousExample -- check if empty
---         result `shouldBe` True -- if it is not empty, then it passed
-
---     it "Returns Something for Valid Inputs" $ do
---       do
---         connection <- connectSqlite3 "test.db" -- connect to sqlite db
---         result <- null <$> safeTransaction connection normalUserInput -- check if empty
---         result `shouldBe` False -- if it is not empty, then it passed
-
 main :: IO ()
 main = hspec $ do
   describe "Unit Tests" $ do
@@ -51,7 +37,7 @@ main = hspec $ do
       it "Returns Nothing for Invalid Inputs" $ do
           connection <- connectSqlite3 "test.db" -- connect to sqlite db
           result <- null <$> safeTransaction connection maliciousExample -- check if empty
-          result `shouldBe` True -- if it is not empty, then it passed
+          result `shouldBe` True -- if it is empty, then it passed
 
       it "Returns Something for Valid Inputs" $ do
         do
