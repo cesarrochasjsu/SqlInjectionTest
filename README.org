@@ -1,0 +1,17 @@
+#+title: Readme
+
+* TODO Nix Install
+
+In order to use this at the moment global nix installs are required
+
+#+begin_src
+nix-env -i cabal cabal2nix
+#+end_src
+
+Then running the program using
+
+#+begin_src
+cabal run
+#+end_src
+
+It works for now but this is super dirty.
