@@ -1,6 +1,7 @@
 let
+  # need to find the package hash for the nixos:unstable
   pkgs = import (fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b.tar.gz")
+    "https://github.com/NixOS/nixpkgs/archive/d063c1dd113c91ab27959ba540c0d9753409edf3.tar.gz")
     { };
 in pkgs.haskellPackages.shellFor {
   packages = hpkgs: [
