@@ -8,6 +8,11 @@ In order to use this at the moment global nix installs are required
 nix-env -i cabal cabal2nix
 #+end_src
 
+The jump into the environment by using
+#+begin_src
+nix-shell 
+#+end_src
+
 Then running the program using
 
 #+begin_src
