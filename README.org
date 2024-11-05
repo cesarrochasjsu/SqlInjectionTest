@@ -2,21 +2,24 @@
 
 * TODO Nix Install
 
-In order to use this at the moment global nix installs are required
+[[https://nixos.org/download/][Nixpkgs]] is available for download [[https://nixos.org/download/][here]].
 
-#+begin_src
-nix-env -i cabal cabal2nix
-#+end_src
+Jump into the nix shell environment by running
 
-The jump into the environment by using
 #+begin_src
 nix-shell 
 #+end_src
 
-Then running the program using
+Then running the program using:
 
 #+begin_src
 cabal run
 #+end_src
 
-It works for now but this is super dirty.
+To further test the program:
+
+#+begin_src
+cabal repl
+#+end_src
+
+will open a REPL with the project loaded
