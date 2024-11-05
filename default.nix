@@ -1,5 +1,7 @@
-let 
-pkgs = import <nixpkgs> {};
+let
+  pkgs = import (fetchTarball
+    "https://github.com/NixOS/nixpkgs/archive/ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b.tar.gz")
+    { };
 in pkgs.haskellPackages.shellFor {
   packages = hpkgs: [
     # reuse the nixpkgs for this package
@@ -9,7 +11,7 @@ in pkgs.haskellPackages.shellFor {
   ];
 
   # development tools we use
-  nativeBuildInputs = [ pkgs.sqlite ];
+  nativeBuildInputs = [ pkgs.sqlite pkgs.cabal-install pkgs.cabal2nix ];
 
   # Extra arguments are added to mkDerivation's arguments as-is.
   # Since it adds all passed arguments to the shell environment,
