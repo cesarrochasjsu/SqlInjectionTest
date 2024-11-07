@@ -10,6 +10,7 @@ mkDerivation {
   executableHaskellDepends = [
     base bytestring HDBC HDBC-sqlite3 hspec HUnit QuickCheck
   ];
+  testHaskellDepends = [ base hspec HUnit QuickCheck ];
   license = lib.licenses.bsd3;
   mainProgram = "SqlInjectionTest";
 }
