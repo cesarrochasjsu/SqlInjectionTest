@@ -16,13 +16,27 @@ Then running the program using:
 cabal run
 #+end_src
 
-To further test the program:
+To see what is going on in the program
 
 #+begin_src
 cabal repl
 #+end_src
 
-will open a REPL with the project loaded
+will open a REPL with the project loaded.
+
+* Running the test suite
+
+Enter the development environment
+
+#+begin_src
+nix-shell
+#+end_src
+
+then run
+
+#+begin_src
+cabal test
+#+end_src
 
 * TODO Further Plans
 
