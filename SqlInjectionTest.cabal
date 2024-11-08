@@ -67,7 +67,8 @@ executable SqlInjectionTest
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    HDBC-sqlite3, HDBC>=2.0.0, HUnit, QuickCheck, base ^>=4.18.2.1, bytestring >= 0.11.5.3, hspec
+    build-depends:    HDBC-sqlite3, HDBC>=2.0.0, HUnit, QuickCheck,
+                      base ^>=4.18.2.1, bytestring >= 0.11.5.3, hspec, scotty>=0.22
 
     -- Directories containing source files.
     hs-source-dirs:   app

@@ -1,5 +1,5 @@
 { mkDerivation, base, bytestring, HDBC, HDBC-sqlite3, hspec, HUnit
-, lib, QuickCheck
+, lib, QuickCheck, scotty
 }:
 mkDerivation {
   pname = "SqlInjectionTest";
@@ -8,9 +8,11 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
+    base bytestring HDBC HDBC-sqlite3 hspec HUnit QuickCheck scotty
+  ];
+  testHaskellDepends = [
     base bytestring HDBC HDBC-sqlite3 hspec HUnit QuickCheck
   ];
-  testHaskellDepends = [ base hspec HUnit QuickCheck ];
   license = lib.licenses.bsd3;
   mainProgram = "SqlInjectionTest";
 }
